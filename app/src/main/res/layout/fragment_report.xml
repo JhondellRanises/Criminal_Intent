@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CriminalIntent_Ranises"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:background="#2196F3"
+            android:textColor="#FFFFFF"
+            android:layout_margin="-16dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Crime Report"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:background="#E3F2FD"
+            android:textColor="#1976D2"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/report_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose how you want to send the crime report:"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/send_email_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send via Email"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="#2196F3"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/send_text_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send via Text Message"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/send_social_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send via Social Media"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:background="#FF9800"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</ScrollView>
