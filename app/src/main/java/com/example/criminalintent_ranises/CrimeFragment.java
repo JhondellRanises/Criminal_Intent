@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 import java.util.UUID;
 
@@ -23,9 +21,7 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
-    private Button mChooseSuspectButton;
-    private Button mSendReportButton;
-    private ImageView mCrimePhotoView;
+    private CheckBox mRequiresPoliceCheckBox;
 
     public static CrimeFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -103,40 +99,18 @@ public class CrimeFragment extends Fragment {
             });
         }
 
-        mChooseSuspectButton = (Button) v.findViewById(R.id.choose_suspect_button);
-        mSendReportButton = (Button) v.findViewById(R.id.send_report_button);
-        mCrimePhotoView = (ImageView) v.findViewById(R.id.crime_photo);
-
-        // Set up button click listeners
-        mChooseSuspectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SuspectActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mSendReportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ReportActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // Set up camera button click listener
-        ImageButton cameraButton = (ImageButton) v.findViewById(R.id.crime_camera);
-        if (cameraButton != null) {
-            cameraButton.setOnClickListener(new View.OnClickListener() {
+        mRequiresPoliceCheckBox = (CheckBox)v.findViewById(R.id.requires_police);
+        if (mRequiresPoliceCheckBox != null) {
+            mRequiresPoliceCheckBox.setChecked(mCrime.isRequiresPolice());
+            mRequiresPoliceCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    // TODO: Implement camera functionality
-                    if (getActivity() != null) {
-                        android.widget.Toast.makeText(getActivity(), "Camera feature coming soon!", android.widget.Toast.LENGTH_SHORT).show();
-                    }
+                public void onCheckedChanged(CompoundButton buttonView,
+                                             boolean isChecked) {
+                    mCrime.setRequiresPolice(isChecked);
                 }
             });
         }
+
 
         return v;
     }

@@ -6,7 +6,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    android:background="#FFFFFF">
+    android:background="#FFEBEE">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:text="Crime title"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:textColor="#333333"
+            android:textColor="#D32F2F"
             android:layout_marginBottom="4dp" />
 
         <TextView
@@ -42,7 +42,32 @@
             android:layout_toLeftOf="@id/crime_solved_image"
             android:text="Crime date"
             android:textSize="14sp"
-            android:textColor="#666666" />
+            android:textColor="#666666"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/contact_police_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/crime_date"
+            android:layout_alignParentLeft="true"
+            android:text="Contact Police"
+            android:textSize="12sp"
+            android:background="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:layout_marginRight="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/crime_date"
+            android:layout_toRightOf="@id/contact_police_button"
+            android:layout_centerVertical="true"
+            android:text="🚨 Serious Crime"
+            android:textSize="12sp"
+            android:textColor="#D32F2F"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
